@@ -1,0 +1,42 @@
+<div *ngIf="showCreateUser" class="alert alert-warning alert-dismissible fade show" role="alert">
+  User created !
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<div class="row">
+  <div class="col-md-6 mx-auto">
+    <div class="card card-body">
+      <h3 class="text-center">Account Register</h3>
+      <form>
+        <div *ngIf="responseError" class="alert alert-danger" role="alert">
+          {{ responseError }}
+        </div>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" name="username" [formControl]="username">
+          <div *ngIf="showUsernameError" class="alert alert-danger" role="alert">
+            Username is not valid
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" name="email" class="form-control" [formControl]="email">
+          <div *ngIf="showEmailError" class="alert alert-danger" role="alert">
+            Email is not valid
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" name="password" class="form-control" [formControl]="password">
+          <div *ngIf="showPasswordError" class="alert alert-danger" role="alert">
+            Password is not valid
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="register()">Registration</button>
+      </form>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,15 @@
+<div class="wrapper-message" *ngIf="advert">
+  <div class="message">
+    <div class="row">
+      <div class="col-md-12 mx-auto">
+        <div class="card card-body">
+          <div class="title">Are you sure you want to delete?</div>
+          <div class="wrapper-buttons">
+            <button type="button" class="btn btn-danger btnsdelete" (click)="deleteAdvert()">Delete</button>
+            <button type="button" class="btn btn-success btnGoBack" (click)="goBackButton()">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="wrapper-view">
+
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <div class="card card-body mb-0">
+        <p>Title: {{advertView.title}}</p>
+        <p>Price: {{advertView.price}}</p>
+        <p>Address: {{advertView.address}}</p>
+        <p>Phone: {{advertView.phone}}</p>
+        <p>Description: {{advertView.discription}}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <div class="card card-body mb-0">
+        <div class="comments">
+          <h4>Chat</h4>
+          <input placeholder="Name">
+          <input name="header" class="form-control" [(ngModel)]="message" placeholder="Write comment" (keydown.enter)="sendMessage()">
+            <div class="card comment">
+              <div class="card-body content">
+                <div class="message" *ngFor="let message of chatMessages">{{message}}</div>
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+

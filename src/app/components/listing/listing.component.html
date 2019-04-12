@@ -1,0 +1,29 @@
+<div class="alert alert-dark title">
+  <div class="btn">
+      <a routerLink="/advert" class="btn btn-primary" role="button">Publish</a>
+  </div>
+  <div class="name">
+      <p class="list">Welcome {{ username }}</p>
+  </div>
+</div>
+
+<ul *ngFor="let advert of adverts;">
+  <div class="row">
+      <div class="col-md-6 mx-auto">
+        <div class="card card-body mb-2">
+          <p>Title: {{advert.title}}</p>
+          <p>Price: {{advert.price}}</p>
+          <p>Address: {{advert.address}}</p>
+          <p>Phone: {{advert.phone}}</p>
+          <p>Description: {{advert.discription}}</p>
+          <p class="buttons">
+            <button type="button" class="btn btn-success btnEdit" (click)="activeAdvertEdit = advert">Edit</button>
+            <button type="button" class="btn btn-danger btnDelete" (click)="activeAdvertDelete = advert">Delete</button>
+          </p>
+      </div>
+    </div>
+  </div>
+</ul>
+
+<app-edit-advert [(advert)]='activeAdvertEdit' (update)="onUpdate()"></app-edit-advert>
+<app-delete-advert [(advert)]='activeAdvertDelete' (elementDeleted)="deleteAdvertById($event)"></app-delete-advert>
